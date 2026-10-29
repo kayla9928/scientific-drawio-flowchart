@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "title": "模拟回顾性研究：记录筛选与数据整理",
+    "page_name": "合成演示 v1",
+    "language": "zh-CN",
+    "purpose": "Synthetic workflow demonstration; no patient data",
+    "version": "1"
+  },
+  "authority": {
+    "content_source": "User-approved synthetic requirement in this conversation",
+    "reference_images_are_content_authority": false
+  },
+  "canvas": {
+    "width": 1020,
+    "height": 810,
+    "fixed": true,
+    "margin": 40,
+    "page_scale": 1
+  },
+  "typography": {
+    "font_family": "Microsoft YaHei",
+    "font_size": 17,
+    "line_height": 1.25,
+    "padding": 10
+  },
+  "approvals": {
+    "content_topology": true,
+    "artifact_mutation": true
+  },
+  "nodes": [
+    {
+      "id": "import",
+      "label": "导入模拟记录<br>100条",
+      "kind": "node",
+      "role": "start",
+      "x": 380,
+      "y": 40,
+      "width": 240,
+      "height": 60,
+      "style": {
+        "fillColor": "#edf4fb",
+        "strokeColor": "#456786",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "eligibility",
+      "label": "资格核查",
+      "kind": "node",
+      "role": "decision",
+      "x": 380,
+      "y": 150,
+      "width": 240,
+      "height": 60,
+      "style": {
+        "fillColor": "#edf4fb",
+        "strokeColor": "#456786",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "excluded",
+      "label": "不符合资格：排除<br>20条",
+      "kind": "node",
+      "role": "terminal",
+      "x": 700,
+      "y": 150,
+      "width": 240,
+      "height": 60,
+      "terminal": true,
+      "style": {
+        "fillColor": "#fff2e8",
+        "strokeColor": "#a65d2d",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "quality",
+      "label": "数据可用性核验<br>80条",
+      "kind": "node",
+      "role": "decision",
+      "x": 380,
+      "y": 270,
+      "width": 240,
+      "height": 60,
+      "style": {
+        "fillColor": "#edf4fb",
+        "strokeColor": "#456786",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "complete",
+      "label": "字段完整<br>60条",
+      "kind": "node",
+      "role": "process",
+      "x": 80,
+      "y": 400,
+      "width": 240,
+      "height": 60,
+      "style": {
+        "fillColor": "#edf4fb",
+        "strokeColor": "#456786",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "repaired",
+      "label": "已核对补全<br>10条",
+      "kind": "node",
+      "role": "process",
+      "x": 380,
+      "y": 400,
+      "width": 240,
+      "height": 60,
+      "style": {
+        "fillColor": "#edf4fb",
+        "strokeColor": "#456786",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "unusable",
+      "label": "无法补全：排除<br>10条",
+      "kind": "node",
+      "role": "terminal",
+      "x": 700,
+      "y": 400,
+      "width": 240,
+      "height": 60,
+      "terminal": true,
+      "style": {
+        "fillColor": "#fff2e8",
+        "strokeColor": "#a65d2d",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "merge",
+      "label": "合并可用记录<br>70条",
+      "kind": "node",
+      "role": "merge",
+      "x": 380,
+      "y": 560,
+      "width": 240,
+      "height": 60,
+      "style": {
+        "fillColor": "#edf4fb",
+        "strokeColor": "#456786",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    },
+    {
+      "id": "analysis",
+      "label": "分析准备<br>70条",
+      "kind": "node",
+      "role": "terminal",
+      "x": 380,
+      "y": 690,
+      "width": 240,
+      "height": 60,
+      "terminal": true,
+      "style": {
+        "fillColor": "#eaf4ee",
+        "strokeColor": "#456786",
+        "fontColor": "#172b3a",
+        "strokeWidth": 1.4
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "import-eligibility",
+      "source": "import",
+      "target": "eligibility",
+      "type": "main",
+      "points": [],
+      "arrow": "block"
+    },
+    {
+      "id": "eligibility-excluded",
+      "source": "eligibility",
+      "target": "excluded",
+      "type": "branch",
+      "points": [],
+      "arrow": "block",
+      "source_anchor": [
+        1,
+        0.5
+      ],
+      "target_anchor": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "id": "eligibility-quality",
+      "source": "eligibility",
+      "target": "quality",
+      "type": "branch",
+      "points": [],
+      "arrow": "block",
+      "label": "符合：80条"
+    },
+    {
+      "id": "quality-complete",
+      "source": "quality",
+      "target": "complete",
+      "type": "branch",
+      "points": [
+        [
+          500,
+          365
+        ],
+        [
+          200,
+          365
+        ]
+      ],
+      "arrow": "block"
+    },
+    {
+      "id": "quality-repaired",
+      "source": "quality",
+      "target": "repaired",
+      "type": "branch",
+      "points": [],
+      "arrow": "block"
+    },
+    {
+      "id": "quality-unusable",
+      "source": "quality",
+      "target": "unusable",
+      "type": "branch",
+      "points": [
+        [
+          500,
+          365
+        ],
+        [
+          820,
+          365
+        ]
+      ],
+      "arrow": "block"
+    },
+    {
+      "id": "complete-merge",
+      "source": "complete",
+      "target": "merge",
+      "type": "merge",
+      "points": [
+        [
+          200,
+          590
+        ]
+      ],
+      "arrow": "block",
+      "target_anchor": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "id": "repaired-merge",
+      "source": "repaired",
+      "target": "merge",
+      "type": "merge",
+      "points": [],
+      "arrow": "block"
+    },
+    {
+      "id": "merge-analysis",
+      "source": "merge",
+      "target": "analysis",
+      "type": "main",
+      "points": [],
+      "arrow": "block"
+    }
+  ],
+  "validation": {
+    "expected_degrees": {
+      "import": [
+        0,
+        1
+      ],
+      "eligibility": [
+        1,
+        2
+      ],
+      "excluded": [
+        1,
+        0
+      ],
+      "quality": [
+        1,
+        3
+      ],
+      "complete": [
+        1,
+        1
+      ],
+      "repaired": [
+        1,
+        1
+      ],
+      "unusable": [
+        1,
+        0
+      ],
+      "merge": [
+        2,
+        1
+      ],
+      "analysis": [
+        1,
+        0
+      ]
+    },
+    "forbidden_edges": [
+      [
+        "excluded",
+        "merge"
+      ],
+      [
+        "unusable",
+        "merge"
+      ],
+      [
+        "excluded",
+        "analysis"
+      ],
+      [
+        "unusable",
+        "analysis"
+      ]
+    ],
+    "required_paths": [
+      [
+        "import",
+        "eligibility",
+        "quality",
+        "complete",
+        "merge",
+        "analysis"
+      ],
+      [
+        "import",
+        "eligibility",
+        "quality",
+        "repaired",
+        "merge",
+        "analysis"
+      ]
+    ],
+    "label_policy": "exact"
+  }
+}

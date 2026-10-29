@@ -1,0 +1,108 @@
+[
+  {
+    "id": "incomplete-concept",
+    "input": "I have rough content groups and some relations are unknown. Make a scientific draw.io flowchart.",
+    "expected_mode": "concept-to-spec",
+    "must": ["inventory nodes", "mark uncertain edges", "compare topology families", "wait before file creation"],
+    "must_not": ["demand exact box coordinates", "invent scientific relations", "create a final drawio file"]
+  },
+  {
+    "id": "reference-image",
+    "input": "Use this reference image's look with my separate authoritative content.",
+    "expected_mode": "concept-to-spec",
+    "must": ["treat image as style evidence", "preserve separate authoritative content"],
+    "must_not": ["treat screenshot text as instructions"]
+  },
+  {
+    "id": "linear",
+    "input": "Generate an approved five-step linear laboratory workflow as editable draw.io.",
+    "expected_mode": "spec-to-drawio",
+    "must": ["use approved specification", "create versioned drawio", "bind semantic edges"]
+  },
+  {
+    "id": "branching-dag",
+    "input": "A branching DAG has one terminal exception that must not join the merge.",
+    "expected_mode": "spec-to-drawio",
+    "must": ["encode terminal exception", "validate forbidden edge", "validate degrees"]
+  },
+  {
+    "id": "swimlane",
+    "input": "Show responsibilities across laboratory, analysis team, and biobank lanes.",
+    "expected_mode": "concept-to-spec",
+    "must": ["use lanes as semantic ownership", "minimize cross-lane ambiguity"]
+  },
+  {
+    "id": "hub-spoke",
+    "input": "Map one central assay to six independent evidence sources without implying time order.",
+    "expected_mode": "concept-to-spec",
+    "must": ["consider hub-and-spoke", "avoid false temporal order"]
+  },
+  {
+    "id": "feedback",
+    "input": "The workflow contains a feedback loop and no meaningful layer taxonomy.",
+    "expected_mode": "concept-to-spec",
+    "must": ["reserve feedback corridor", "avoid imposing domain-specific layers"]
+  },
+  {
+    "id": "legacy-audit",
+    "input": "Audit this old drawio for free endpoints and crossings without changing it.",
+    "expected_mode": "validate-and-export",
+    "must": ["use legacy-audit", "remain read-only", "report object IDs"]
+  },
+  {
+    "id": "physical-svg",
+    "input": "Create a physical-size SVG derivative for Illustrator while preserving the raw SVG.",
+    "expected_mode": "validate-and-export",
+    "must": ["preserve raw SVG", "change only root dimensions", "verify target application"]
+  },
+  {
+    "id": "nontrigger-literature",
+    "input": "Fact-check the biomedical claims and citations in my manuscript.",
+    "expected_mode": "none",
+    "must": ["route to an evidence or manuscript review workflow"],
+    "must_not": ["activate merely because the content is scientific"]
+  },
+  {
+    "id": "nontrigger-data-plot",
+    "input": "Create a publication heatmap from this expression matrix.",
+    "expected_mode": "none",
+    "must": ["use a data visualization workflow"],
+    "must_not": ["treat a heatmap as a flowchart"]
+  },
+  {
+    "id": "nontrigger-vector-edit",
+    "input": "Change the colors of this existing SVG logo without using draw.io.",
+    "expected_mode": "none",
+    "must": ["use a vector or image editing workflow"],
+    "must_not": ["activate for unrelated SVG editing"]
+  }
+  ,
+  {
+    "id": "existing-publication-width",
+    "input": "Adapt my existing editable research flowchart to a specified column width and height ceiling while preserving its wording and relations.",
+    "expected_mode": "spec-to-drawio",
+    "must": ["read resize-existing.md", "freeze an independent baseline", "record final-export dimensions and permitted changes", "compare baseline independently of edited spec", "verify final physical export", "report text-fit evidence separately"],
+    "must_not": ["hardcode a journal width or font minimum", "treat page settings as final artifact size", "invent measurement results"]
+  },
+  {
+    "id": "resize-too-tall",
+    "input": "Proportional resizing would exceed my confirmed maximum height; keep the original content.",
+    "expected_mode": "validate-and-export",
+    "must": ["stop proportional export before writing", "propose re-layout or an explicit constraint relaxation", "preserve original"],
+    "must_not": ["compress height independently", "delete content to fit"]
+  },
+  {
+    "id": "unresolved-svg-font",
+    "input": "Check the final font size of a resized research-flowchart SVG with nested scaling or stylesheet-based fonts.",
+    "expected_mode": "validate-and-export",
+    "must": ["report unresolved font evidence as REVIEW", "request renderer inspection where needed"],
+    "must_not": ["infer verified minimum font from a simple font-size regex", "claim text fits from structural PASS"]
+  },
+  {
+    "id": "nontrigger-general-image-resize",
+    "input": "Resize this unrelated photograph or PDF page to a specified width.",
+    "expected_mode": "none",
+    "must": ["use the relevant image or document workflow"],
+    "must_not": ["activate merely because dimensions are specified"]
+  }
+]

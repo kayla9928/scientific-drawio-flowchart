@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" pages="1">
+  <diagram name="合成演示 v1" id="SDF-page-1">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1020" pageHeight="810" math="0" shadow="0" adaptiveColors="none">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SDF-import" value="导入模拟记录&lt;br&gt;100条" style="rounded=1;fillColor=#edf4fb;strokeColor=#456786;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-eligibility" value="资格核查" style="rounded=1;fillColor=#edf4fb;strokeColor=#456786;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="380" y="150" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-excluded" value="不符合资格：排除&lt;br&gt;20条" style="rounded=1;fillColor=#fff2e8;strokeColor=#a65d2d;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="700" y="150" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-quality" value="数据可用性核验&lt;br&gt;80条" style="rounded=1;fillColor=#edf4fb;strokeColor=#456786;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="380" y="270" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-complete" value="字段完整&lt;br&gt;60条" style="rounded=1;fillColor=#edf4fb;strokeColor=#456786;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-repaired" value="已核对补全&lt;br&gt;10条" style="rounded=1;fillColor=#edf4fb;strokeColor=#456786;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="380" y="400" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-unusable" value="无法补全：排除&lt;br&gt;10条" style="rounded=1;fillColor=#fff2e8;strokeColor=#a65d2d;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="700" y="400" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-merge" value="合并可用记录&lt;br&gt;70条" style="rounded=1;fillColor=#edf4fb;strokeColor=#456786;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="380" y="560" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-analysis" value="分析准备&lt;br&gt;70条" style="rounded=1;fillColor=#eaf4ee;strokeColor=#456786;html=1;whiteSpace=wrap;svgWhiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;align=center;verticalAlign=middle;spacing=10;overflow=hidden;strokeWidth=1.4;container=0;convertToSvg=1;fontColor=#172b3a;" vertex="1" parent="1">
+          <mxGeometry x="380" y="690" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-import-eligibility" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-import" target="SDF-eligibility">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-eligibility-excluded" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-eligibility" target="SDF-excluded">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-eligibility-quality" value="符合：80条" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-eligibility" target="SDF-quality">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-quality-complete" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-quality" target="SDF-complete">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="365" />
+              <mxPoint x="200" y="365" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SDF-quality-repaired" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-quality" target="SDF-repaired">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-quality-unusable" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-quality" target="SDF-unusable">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="365" />
+              <mxPoint x="820" y="365" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SDF-complete-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-complete" target="SDF-merge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SDF-repaired-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-repaired" target="SDF-merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SDF-merge-analysis" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;fontFamily=Microsoft YaHei;fontSize=17;convertToSvg=1;" edge="1" parent="1" source="SDF-merge" target="SDF-analysis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "title": "Generic branching workflow",
+    "page_name": "Branching DAG regression",
+    "version": "1"
+  },
+  "authority": {
+    "content_source": "Synthetic regression fixture",
+    "reference_images_are_content_authority": false
+  },
+  "canvas": {
+    "width": 700,
+    "height": 430,
+    "fixed": true,
+    "margin": 20,
+    "page_scale": 1
+  },
+  "typography": {
+    "font_family": "Arial",
+    "font_size": 12,
+    "line_height": 1.2,
+    "padding": 6
+  },
+  "approvals": {
+    "content_topology": true,
+    "artifact_mutation": true
+  },
+  "nodes": [
+    {"id": "start", "label": "Start", "kind": "node", "role": "start", "x": 270, "y": 20, "width": 160, "height": 40},
+    {"id": "decision", "label": "Assess condition", "kind": "node", "role": "decision", "x": 270, "y": 90, "width": 160, "height": 40},
+    {"id": "branch-a", "label": "Branch A", "kind": "node", "role": "process", "x": 80, "y": 170, "width": 160, "height": 40},
+    {"id": "branch-b", "label": "Branch B", "kind": "node", "role": "process", "x": 270, "y": 170, "width": 160, "height": 40},
+    {"id": "terminal-exception", "label": "Independent terminal", "kind": "node", "role": "terminal", "terminal": true, "x": 500, "y": 170, "width": 160, "height": 40},
+    {"id": "merge", "label": "", "kind": "junction", "role": "merge", "x": 347, "y": 280, "width": 6, "height": 6},
+    {"id": "end", "label": "Follow-up", "kind": "node", "role": "terminal", "terminal": true, "x": 270, "y": 360, "width": 160, "height": 40}
+  ],
+  "edges": [
+    {"id": "e-start-decision", "source": "start", "target": "decision", "type": "main", "points": [], "arrow": "block"},
+    {"id": "e-decision-a", "source": "decision", "target": "branch-a", "type": "branch", "points": [[350, 150], [160, 150]], "arrow": "block"},
+    {"id": "e-decision-b", "source": "decision", "target": "branch-b", "type": "branch", "points": [], "arrow": "block"},
+    {"id": "e-decision-terminal", "source": "decision", "target": "terminal-exception", "type": "branch", "points": [[350, 150], [580, 150]], "arrow": "block"},
+    {"id": "e-a-merge", "source": "branch-a", "target": "merge", "type": "merge", "target_anchor": [0.5, 0.5], "points": [[160, 283], [350, 283]], "arrow": "none"},
+    {"id": "e-b-merge", "source": "branch-b", "target": "merge", "type": "merge", "target_anchor": [0.5, 0.5], "points": [[350, 283]], "arrow": "none"},
+    {"id": "e-merge-end", "source": "merge", "target": "end", "type": "main", "points": [], "arrow": "block"}
+  ],
+  "validation": {
+    "expected_degrees": {
+      "start": [0, 1],
+      "decision": [1, 3],
+      "branch-a": [1, 1],
+      "branch-b": [1, 1],
+      "terminal-exception": [1, 0],
+      "merge": [2, 1],
+      "end": [1, 0]
+    },
+    "forbidden_edges": [["terminal-exception", "merge"]],
+    "required_paths": [["start", "decision", "branch-a", "merge", "end"]]
+  }
+}
